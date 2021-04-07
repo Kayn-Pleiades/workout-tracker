@@ -1,4 +1,6 @@
+// Required Packaged
 const express = require('express');
+const mongoose = require("mongoose");
 
 const PORT = process.env.PORT || 8080;
 
@@ -11,6 +13,9 @@ app.use(express.static('public'));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-//Set Up Route here
+//TO DO: connect mongoose
+
+// Routes
+app.use(require("./routes/api.js"));
 
 app.listen(PORT, () => console.log(`App now listening at localhost:${PORT}`));
