@@ -27,4 +27,7 @@ app.use(logger("dev"));
 app.use(require("./routes/api.js"));
 app.use(require('./routes/htmlRoutes.js'));
 
+// Run seed file
+require("./seeders/seed.js");
+
 app.listen(PORT, () => console.log(`App now listening at localhost:${PORT}`));
