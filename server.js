@@ -1,6 +1,7 @@
 // Required Packaged
 const express = require('express');
 const mongoose = require("mongoose");
+const logger = require('morgan');
 
 const PORT = process.env.PORT || 8080;
 
@@ -18,6 +19,9 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout", {
   useNewUrlParser: true,
   useFindAndModify: false
 });
+
+// Set up logger 
+app.use(logger("dev"));
 
 // Routes
 app.use(require("./routes/api.js"));
